@@ -115,6 +115,19 @@ public class WindGroupTest {
         WindMetarGroup windMetarGroup = new WindMetarGroup(direction,speed,gust,fromDirection,toDirection);
         assertEquals("VRB10G21KT", windMetarGroup.generate(), "Codifica rajada de vento com vento variando");
     }
+
+    @Test
+    public void shouldGenerateWindWithVaryingValue() {
+        final BigInteger direction = new BigInteger("60");
+        final BigInteger speed = new BigInteger("10");
+        final BigInteger gust = null;
+        final BigInteger fromDirection = new BigInteger("40");
+        final BigInteger toDirection = new BigInteger("200");
+        WindMetarGroup windMetarGroup = new WindMetarGroup(direction,speed,gust,fromDirection,toDirection);
+        assertEquals("06010KT 040V200", windMetarGroup.generate(), "Codifica a variacao do vento quando diferença da direção for superior " + 
+            "ou igual 60 e inferior 180 graus com a velocidade do vento superior ou igual 3 nos");
+
+    }
     
     
 }

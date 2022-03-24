@@ -19,5 +19,6 @@ public class DirectionValue {
 
     private String formatDegreeValue(BigInteger value) {                
         return String.format(FORMAT_OUTPUT_VALUE, value.longValue());
-    } 
+    }
+    
 }
