@@ -1,4 +1,4 @@
-package br.com.observation;
+package br.com.observation.metar.domain.entity.wind;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

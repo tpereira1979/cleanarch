@@ -1,4 +1,4 @@
-package br.com.observation;
+package br.com.observation.metar.domain.entity.wind;
 
 import java.math.BigInteger;
 

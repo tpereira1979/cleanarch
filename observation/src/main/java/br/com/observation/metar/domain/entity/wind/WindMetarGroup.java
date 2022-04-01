@@ -1,4 +1,4 @@
-package br.com.observation;
+package br.com.observation.metar.domain.entity.wind;
 
 import java.math.BigInteger;
 
@@ -24,7 +24,11 @@ public class WindMetarGroup {
         this.directionVarying = new DirectionVaryingValue(null, null, speed);
     }    
 
-    public WindMetarGroup(BigInteger direction, BigInteger speed, BigInteger gust, BigInteger fromDirectionValue, BigInteger toDirectionValue) {
+    public WindMetarGroup(BigInteger direction, 
+                          BigInteger speed,
+                          BigInteger gust,
+                          BigInteger fromDirectionValue,
+                          BigInteger toDirectionValue) {                              
         this.direction = new DirectionValue(direction);
         this.speed = new SpeedValue(speed, gust);
         this.directionVarying = new DirectionVaryingValue(fromDirectionValue, toDirectionValue, speed);

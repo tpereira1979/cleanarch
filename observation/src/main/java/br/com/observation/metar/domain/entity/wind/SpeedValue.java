@@ -1,4 +1,4 @@
-package br.com.observation;
+package br.com.observation.metar.domain.entity.wind;
 
 import java.math.BigInteger;
 
@@ -6,6 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 
 public class SpeedValue {
 
+    private static final String FORMAT_OUTPUT_SPEED_GUST_VALUE = "%s%s";
     private static final String FORMAT_OUTPUT_GUST_VALUE = "G%s";
     private static final String EMPTY = "//";
     private static final String FORMAT_OUTPUT_VALUE = "%02d";
@@ -27,7 +28,7 @@ public class SpeedValue {
         final String speedValue = formatValue(this.speed.longValue());        
         return StringUtils.isBlank(gustValue) 
                ? speedValue
-               : String.format("%s%s", speedValue, gustValue);
+               : String.format(FORMAT_OUTPUT_SPEED_GUST_VALUE, speedValue, gustValue);
     }
     
     private String generateGustValue() {
