@@ -1,10 +1,10 @@
-package br.com.observation.metar.domain.entity.wind;
+package br.com.observation.metar.domain.wind;
 
 import java.math.BigInteger;
 
 import org.apache.commons.lang3.StringUtils;
 
-public class WindMetarGroup {
+public class WindGroup {
 
     private static final String VRB_VALUE = "VRB";
 
@@ -18,13 +18,13 @@ public class WindMetarGroup {
 
     private DirectionVaryingValue directionVarying; 
 
-    public WindMetarGroup(BigInteger direction, BigInteger speed, BigInteger gust) {
+    public WindGroup(BigInteger direction, BigInteger speed, BigInteger gust) {
         this.direction = new DirectionValue(direction);
         this.speed = new SpeedValue(speed, gust);        
         this.directionVarying = new DirectionVaryingValue(null, null, speed);
     }    
 
-    public WindMetarGroup(BigInteger direction, 
+    public WindGroup(BigInteger direction, 
                           BigInteger speed,
                           BigInteger gust,
                           BigInteger fromDirectionValue,

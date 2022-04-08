@@ -1,11 +1,10 @@
-package br.com.observation.metar.domain.entity.wind;
+package br.com.observation.metar.domain.wind;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.math.BigInteger;
 
 import org.junit.jupiter.api.Test;
-
 
 public class DirectionValueTest {
 

@@ -1,4 +1,4 @@
-package br.com.observation.metar.domain.entity.visibility;
+package br.com.observation.metar.domain.visibility;
 
 public class PrevalingValue {
 
@@ -6,7 +6,7 @@ public class PrevalingValue {
     private static final String VISIBILITY_OVER_THAN_TEN_KM = "9999";
     private Long value;
 
-    public PrevalingValue(Long value) throws Exception {
+    public PrevalingValue(final Long value) throws Exception {
         if (this.isInValid(value)) throw new Exception("Valor de visibilidade predominante invalido");
         this.value = value;
     }
@@ -18,15 +18,7 @@ public class PrevalingValue {
 
     private Boolean isInValid(Long value) {
         if (value == null) return Boolean.FALSE;
-        if (value >= VISIBILITY_LIMIT) return Boolean.FALSE;
-        Boolean isValueValid = this.isDivisibleBy(value, 50l) 
-                               || this.isDivisibleBy(value, 100l)
-                               || this.isDivisibleBy(value, 1000l);
-        return !isValueValid;
+        if (value >= VISIBILITY_LIMIT) return Boolean.FALSE;        
+        return IncrementVisibilityValue.isInValid(value);
     }
-
-    private Boolean isDivisibleBy(Long value, Long by) {
-        return value % by == 0;
-    }
-    
 }
