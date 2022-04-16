@@ -18,7 +18,7 @@ public class VisibilityGroup {
         this.minimumValue = new MinimumValue(minimumValue, prevalingValue, direction);
     }
 
-    public String generate() {        
+    public String encode() {        
         return StringUtils.isBlank(this.minimumValue.getValue()) 
                ? String.format("%s", this.prevalingValue.getValue())
                : String.format("%s %s", this.prevalingValue.getValue(), this.minimumValue.getValue());

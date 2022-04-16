@@ -34,7 +34,7 @@ public class WindGroup {
         this.directionVarying = new DirectionVaryingValue(fromDirectionValue, toDirectionValue, speed);
     }
 
-    public String generate() {        
+    public String encode() {        
         if (directionVarying.isVRB()) return formatGroup(VRB_VALUE, speed.getValue());        
         return StringUtils.isBlank(directionVarying.getValue()) 
                 ? formatGroup(direction.getValue(), speed.getValue()) 
