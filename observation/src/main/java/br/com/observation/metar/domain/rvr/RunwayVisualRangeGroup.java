@@ -8,7 +8,12 @@ public class RunwayVisualRangeGroup {
     
     public RunwayVisualRangeGroup(String runway, Long value) throws Exception {
         this.runwayValue = new RunwayValue(runway);
-        this.visualRangeValue = new VisualRangeValue(value);
+        this.visualRangeValue = new VisualRangeValue(value, null);
+    }
+
+    public RunwayVisualRangeGroup(String runway, Long value, String tendendy) throws Exception {
+        this.runwayValue = new RunwayValue(runway);
+        this.visualRangeValue = new VisualRangeValue(value, tendendy);
     }
 
     public String encode() {
